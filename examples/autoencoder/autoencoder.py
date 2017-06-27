@@ -7,15 +7,15 @@ from layers import *
 def encoder(input):
     # Create a conv network with 3 conv layers and 1 FC layer
     # Conv 1: filter: [3, 3, 1], stride: [2, 2], relu
-    conv1_output = conv(input, 'conv1', [3, 3, 1], [1, 1])
+    conv1_output = conv(input, 'conv1', [3, 3, 1], [2, 2])
     # conv1_output = max_pool(conv1_output, 'conv1_pool', [3, 3], [2, 2])
 
     # Conv 2: filter: [3, 3, 8], stride: [2, 2], relu
-    conv2_output = conv(conv1_output, 'conv2', [3, 3, 8], [1, 1])
+    conv2_output = conv(conv1_output, 'conv2', [3, 3, 8], [2, 2])
     # conv2_output = max_pool(conv2_output, 'conv2_pool', [3, 3], [2, 2])
 
     # Conv 3: filter: [3, 3, 8], stride: [2, 2], relu
-    conv3_output = conv(conv2_output, 'conv3', [3, 3, 8], [1, 1])
+    conv3_output = conv(conv2_output, 'conv3', [3, 3, 8], [2, 2])
     # conv3_output = max_pool(conv3_output, 'conv3_pool', [3, 3], [2, 2])
 
     # FC: output_dim: 100, no non-linearity
